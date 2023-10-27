@@ -1,4 +1,4 @@
-# JATE PWA ![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)
+# PWA-TextEditor ![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)
 
 
 ## Description
