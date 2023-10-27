@@ -20,7 +20,7 @@ const pageCache = new CacheFirst({
 });
 
 warmStrategyCache({
-  urls: ['/index.html', '/', '/client/dist/assets/icons/icon_96x96.97a96e0fc4eb2a8bec3b8d49d90f1d14.png'],
+  urls: ['/index.html', '/', '/client/dist/assets/icons/icon_96x96.97a96e0fc4eb2a8bec3b8d49d90f1d14.png'], // Caching img
   strategy: pageCache,
 });
 
@@ -40,7 +40,7 @@ registerRoute(
       maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
     }),
   ],
-}));
+})); // This code implements asset caching by caching the icons in the assets-cache for offline fallback.  
 
 registerRoute(
   ({ request }) => request.url.endsWith('/manifest.b0c8e6e0a0ff21b29afcd5107a41f492.json'), // Match the manifest.json file
@@ -55,4 +55,4 @@ registerRoute(
       }),
     ],
   })
-);
+); // This code creates a manifest cache for caching the manifest.json for offline fallback. 

@@ -22,7 +22,7 @@ module.exports = () => {
         template: './index.html',
         title: 'Text Editor'
       }),
-      new WebpackPwaManifest({
+      new WebpackPwaManifest({ // Setup for manifest matching the project example. 
         name: 'Take notes with Javascript syntax highlighting!',
         short_name: 'J.A.T.E',
         description: 'An awesome text editor!',
