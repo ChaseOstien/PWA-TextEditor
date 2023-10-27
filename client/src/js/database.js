@@ -25,7 +25,7 @@ export const putDb = async (content) => {
   } catch (err) {
     console.error('putDb failed');
   }
-};
+}; // Added logic for indexDb put route.
 
 // TODO: Add logic for a method that gets all the content from the database
 export const getDb = async () => {
@@ -40,6 +40,6 @@ export const getDb = async () => {
   } catch (err) {
     console.error('getDb ');
   }
-}
+}; // Added logic for indexDb get route.
 
 initdb();
