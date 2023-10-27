@@ -20,11 +20,39 @@ const pageCache = new CacheFirst({
 });
 
 warmStrategyCache({
-  urls: ['/index.html', '/'],
+  urls: ['/index.html', '/', '/client/dist/assets/icons/icon_96x96.97a96e0fc4eb2a8bec3b8d49d90f1d14.png'],
   strategy: pageCache,
 });
 
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
 // TODO: Implement asset caching
-registerRoute();
+registerRoute(
+  ({ request }) => request.destination === 'image', 
+  new CacheFirst({
+  cacheName: 'assets-cache',
+  plugins: [
+    new CacheableResponsePlugin({
+      statuses: [0, 200],
+    }),
+    new ExpirationPlugin({
+      maxEntries: 60,
+      maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+    }),
+  ],
+}));
+
+registerRoute(
+  ({ request }) => request.url.endsWith('/manifest.b0c8e6e0a0ff21b29afcd5107a41f492.json'), // Match the manifest.json file
+  new CacheFirst({
+    cacheName: 'manifest-cache',
+    plugins: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+      new ExpirationPlugin({
+        maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+      }),
+    ],
+  })
+);

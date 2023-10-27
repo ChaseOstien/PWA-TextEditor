@@ -23,18 +23,21 @@ module.exports = () => {
         title: 'Text Editor'
       }),
       new WebpackPwaManifest({
-        name: 'Just Another Text Editor',
-        short_name: 'JATE',
+        name: 'Take notes with Javascript syntax highlighting!',
+        short_name: 'J.A.T.E',
         description: 'An awesome text editor!',
-        background_color: '#ffffff',
+        theme_color: '#225ca3',
+        background_color: '#225ca3',
         orientation: 'portrait',
         display: 'standalone',
         crossorigin: 'use-credentials',
+        start_url: '/',
+        publicPath: '/',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 144, 192, 256, 384, 512],
-            destination: path.join('src', 'icons')
+            destination: path.join('assets', 'icons')
           }
         ]
       }),
