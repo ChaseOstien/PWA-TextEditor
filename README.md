@@ -1,4 +1,4 @@
-# Tech Blog ![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)
+# JATE PWA ![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)
 
 
 ## Description
